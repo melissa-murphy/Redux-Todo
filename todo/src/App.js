@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { something } from './actions';
+
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
-function App() {
-  return (
-    <div className="App">
-      <TodoList />
-      <TodoForm />
-    </div>
-  );
+class App extends Component {
+  state = {
+    newItem: ''
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <TodoList>
+          <TodoForm />
+        </TodoList>
+      </div>
+    );
+  }
 }
 
 export default App;

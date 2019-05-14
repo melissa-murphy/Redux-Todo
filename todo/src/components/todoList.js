@@ -3,7 +3,15 @@ import { connect } from 'react-redux';
 
 import { addItem, toggleItem, deleteItem } from '../actions';
 
-class TodoList extends Component {}
+class TodoList extends Component {
+  state = {
+    newItem: ''
+  };
+
+  handleChange = ev => {
+    this.setState({ newItem: ev.target.value })
+  }
+}
 
 const mapStateToProps = state => {
   return {

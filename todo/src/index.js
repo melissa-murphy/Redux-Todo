@@ -8,11 +8,11 @@ import './index.css';
 import App from './App';
 
 
-const store = createStore(reducers);
-const rootElement = document.getElementById('root')
+ 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={createStore(reducers)} >
     <App />
   </Provider>,
-  rootElement
+  document.getElementById('root')
 );
+
