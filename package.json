@@ -1,0 +1,11 @@
+{
+  "name": "Redux-Todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/melissa-murphy/Redux-Todo.git",
+  "author": "melissa-murphy <melissamurphy.ca@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "create-react-app": "^3.0.1"
+  }
+}
