@@ -7,7 +7,7 @@ import TodoList from './components/TodoList';
 
 class App extends Component {
   state = {
-    newItem: ''
+    todo: ''
   }
 
   render() {

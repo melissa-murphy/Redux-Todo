@@ -1,18 +1,35 @@
-const ADD_ITEM = 'ADD_ITEM';
-const DELETE_ITEM = 'DELETE_ITEM';
-const TOGGLE_ITEM = 'TOGGLE_ITEM'
+import { ADD_ITEM, TOGGLE_ITEM } from '../actions';
 
-const todo = (state = [], action) => {
+const initialState = {
+  todos: []
+}
+function reducer (state = initialState, action) {
   switch (action.type) {
     case ADD_ITEM:
-      return { ...state, finished: false };
-    case DELETE_ITEM:
-      return { ...state, finished: true };
+      return { ...state, 
+        todos: [
+          ...state.todos,
+          { name: action.payload, todoCompleted: false }
+        ]
+      };
     case TOGGLE_ITEM:
-      return { ...state, toggleItem: !state.toggleItem };
+      return {
+        ...state,
+        todos: state.todos.map(todo => {
+          if (todo.id === action.payload) {
+            return {
+              ...todo,
+              todoCompleted: !todo.todoCompleted
+            }
+          }
+          return todo
+        })
+      }
+      // case DELETE_ITEM:
+      // return { ...state, finished: true };
     default:
       return state;
   }
 };
 
-export default todo;
+export default reducer;
