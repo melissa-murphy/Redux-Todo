@@ -1,11 +1,11 @@
-import { GET_LIST, ADD_ITEM, TOGGLE_ITEM } from '../actions';
+import { GET_LIST, TOGGLE_ITEM } from '../actions';
 
 export default (todos = [], action) => {
   switch (action.type) {
     case GET_LIST:
       return action.payload;
-    case ADD_ITEM:
-      return [...todos, action.payload];
+    // case ADD_ITEM:
+    //   return [...todos, action.payload];
     case TOGGLE_ITEM:
       return {
         ...todos,
