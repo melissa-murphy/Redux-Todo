@@ -1,24 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { something } from './actions';
-
-import TodoForm from './components/TodoForm';
+import React from 'react';
 import TodoList from './components/TodoList';
+import NewTodo from './components/NewTodo';
 
-class App extends Component {
-  state = {
-    todo: ''
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <TodoList>
-          <TodoForm />
-        </TodoList>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <>
+    <TodoList />
+    <NewTodo />
+  </>
+);
 
 export default App;
